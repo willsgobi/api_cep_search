@@ -1,14 +1,58 @@
 # api_cep_search
 
-A new Flutter package project.
+Package para consulta de endereço via apiCEP.
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+Insira a última versão em seu pubspec.yaml (and run `dart pub get`);
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```yaml
+depencencies:
+    api_cep_search: ^1.0.4
+```
+
+## Example
+Consulta de CEP via apiCEP.
+
+Você pode passar um valor fixo ou variável para a função e ela retornará os dados do endereço:
+
+```dart
+    SearchCep.getInstance("15370496")
+```
+
+<hr>
+
+```dart
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+          child: FutureBuilder<SearchCep>(
+              future: SearchCep.getInstance("15370496"),
+              builder: (context, snapshot) {
+                if (snapshot.data == null) return Container();
+
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      snapshot.data.code,
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    Text(snapshot.data.state, style: TextStyle(fontSize: 20)),
+                    Text(snapshot.data.city, style: TextStyle(fontSize: 20)),
+                    Text(snapshot.data.district,
+                        style: TextStyle(fontSize: 20)),
+                    Text(snapshot.data.address, style: TextStyle(fontSize: 20)),
+                  ],
+                );
+              })),
+    );
+  }
+}
+```

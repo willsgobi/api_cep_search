@@ -1,6 +1,6 @@
 name: api_cep_search
 description: Package para consulta de endereço via apiCEP.
-version: 1.0.0
+version: 1.0.4
 homepage: https://github.com/willsgobi/api_cep_search
 
 environment:
