@@ -8,15 +8,17 @@ Insira a última versão em seu pubspec.yaml (and run `dart pub get`);
 
 ```yaml
 depencencies:
-    api_cep_search: ^1.0.4
+  api_cep_search: ^1.0.5
 ```
 
 ## Example
+
 Consulta de CEP via apiCEP.
 
 Você pode passar um valor fixo ou variável para a função e ela retornará os dados do endereço:
 
 ```dart
+    /// basta passar um CEP válido sem p ' - ' para realizar a consulta
     SearchCep.getInstance("15370496")
 ```
 

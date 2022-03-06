@@ -1,14 +1,14 @@
 name: api_cep_search
-description: Package para consulta de endereço via apiCEP.
-version: 1.0.4
+description: Pacote para consulta de endereço via apiCEP através de um CEP válido.
+version: 1.0.5
 homepage: https://github.com/willsgobi/api_cep_search
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: '>=2.12.0 <3.0.0'
+  flutter: '>=1.17.0'
 
 dependencies:
-  dio: ">=3.0.9 <4.0.0"
+  dio: '>=4.0.1 <5.0.0'
   flutter:
     sdk: flutter
 

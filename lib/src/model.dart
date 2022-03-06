@@ -11,14 +11,14 @@ class SearchCep {
   final String address;
 
   SearchCep(
-      {this.status,
-      this.ok,
-      this.code,
-      this.state,
-      this.city,
-      this.district,
-      this.address,
-      this.statusText});
+      {required this.status,
+      required this.ok,
+      required this.code,
+      required this.state,
+      required this.city,
+      required this.district,
+      required this.address,
+      required this.statusText});
 
   factory SearchCep.fromJson(Map<String, dynamic> json) {
     return SearchCep(
